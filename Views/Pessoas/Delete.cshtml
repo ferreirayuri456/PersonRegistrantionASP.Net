@@ -1,0 +1,61 @@
+﻿
+@model cadastroPessoa.Models.Pessoa
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Delete</h2>
+
+<h3>Você quer realmente excluir esta pessoa?</h3>
+
+@using (Html.BeginForm()) { 
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Dados da pessoa</h4>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cpf, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Cpf)
+            @Html.ValidationMessageFor(model => model.Cpf)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Telefone)
+            @Html.ValidationMessageFor(model => model.Telefone)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Endereco, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Endereco)
+            @Html.ValidationMessageFor(model => model.Endereco)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Excluir" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Voltar a listagem", "Index")
+</div>
+<script src="~/Scripts/jquery.validate.min.js" />
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" />
